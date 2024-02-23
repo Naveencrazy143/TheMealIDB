@@ -3,6 +3,7 @@ import './App.css';
 import { Route, Routes } from 'react-router-dom';
 import { IngredientList, MenuList, OrderInformation, TopNavBar } from './Module';
 import { NoPage } from './Component';
+import { Footer } from './Module/Screen/Footer';
 
 
 
@@ -18,6 +19,7 @@ function App() {
           <Route path="/order" element={<OrderInformation/>} />
           <Route path="*" element={<NoPage/>} />
     </Routes>
+    <Footer/>
 
     </div>
  

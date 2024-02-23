@@ -15,14 +15,14 @@ function IngredientCard({ onClick }) {
                 <div className='row'>
 
                   <div className="col-lg-5  col-md-5" onClick={onClick}>
-                    <div className='h4 pt-4 pb-5' style={{ color: 'white' }}>{element?.strMeal}</div>
+                    <div className='h4 pt-4 pb-4' style={{ color: 'white' }}>{element?.strMeal}</div>
                     <div className="card" style={{ backgroundColor: "#2d2013" }}>
                       <img className="card-img-top" src={element.strMealThumb} alt="Card image cap" />
                     </div>
                   </div>
 
                   <div className='col-lg-6 col-md-6' style={{ color: 'white' }}>
-                    <div className='h4 pt-4 pb-5' style={{ color: 'white' }}>Ingredients</div>
+                    <div className='h4 pt-4 pb-4' style={{ color: 'white' }}>Ingredients</div>
                     <div>
                       <ul className="list-unstyled d-flex flex-wrap">
                         {Object.keys(element)

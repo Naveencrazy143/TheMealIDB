@@ -18,7 +18,7 @@ function IngredientList() {
       )
     },[])
   return (
-    <div style={{backgroundColor:"#2d2013"}}  >
+    <div style={{backgroundColor:"#2d2013"}} className='pt-3' >
 <div className='container-fluid px-lg-5 '>
 <IngredientCard/>
 
