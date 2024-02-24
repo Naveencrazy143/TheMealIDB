@@ -40,7 +40,6 @@ function IngredientCard({ onClick }) {
                       </ul>
                     </div>
                   </div>
-
                 </div>
 
                 <div className='text-center pt-5 pb-3' style={{ color: 'white' }}>

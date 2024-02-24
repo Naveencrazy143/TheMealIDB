@@ -30,7 +30,6 @@ function CheckoutForm() {
     let currentHours = currentDate.getHours();
     const currentMinutes = currentDate.getMinutes();
     const period = currentHours < 12 ? 'AM' : 'PM';
-
     if (currentHours > 12) {
       currentHours -= 12;
     } else if (currentHours === 0) {

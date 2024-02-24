@@ -10,7 +10,6 @@ function OrderInformation() {
       return string.charAt(0).toUpperCase() + string.slice(1);
   }
 
-
   const renderValue = (keyValue) => {
     return Object.keys(keyValue).map((key) => {
       let value = keyValue[key];
