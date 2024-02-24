@@ -24,6 +24,7 @@ function OrderInformation() {
           <p  style={{fontWeight:'bolder'}}> City : <span style={{fontWeight:'normal'}}> {shippingInformations?.city}</span> </p>
           <p  style={{fontWeight:'bolder'}}> Number : <span style={{fontWeight:'normal'}}>{shippingInformations?.phone}</span> </p>
           <p  style={{fontWeight:'bolder'}}> Email : <span style={{fontWeight:'normal'}}> {shippingInformations?.email}</span> </p>
+          <p  style={{fontWeight:'bolder'}}> Quantity : <span style={{fontWeight:'normal'}}> {shippingInformations?.quantity}</span> </p>
           <p  style={{fontWeight:'bolder'}}> Ordered Time : <span style={{fontWeight:'normal'}}> {shippingInformations?.time}</span> </p>
     
       

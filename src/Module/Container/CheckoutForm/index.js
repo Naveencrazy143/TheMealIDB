@@ -12,7 +12,8 @@ function CheckoutForm() {
     state: '',
     zip: '',
     email: '',
-    phone: ''
+    phone: '',
+    quantity:''
   });
 
   const handleChange = (e) => {
@@ -91,6 +92,12 @@ function CheckoutForm() {
           <label>Phone</label>
           <input type="tel" className="form-control" name="phone" value={shippingInfo.phone} 
           maxLength={10} 
+          onChange={handleChange} required style={{backgroundColor:"#f2faf0"}} />
+          </div>
+          <div className="form-group col-md-6">
+          <label>Quantity</label>
+          <input type="tel" className="form-control" name="quantity" value={shippingInfo.quantity} 
+          maxLength={2} 
           onChange={handleChange} required style={{backgroundColor:"#f2faf0"}} />
           </div>
         </div>
