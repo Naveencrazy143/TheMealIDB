@@ -5,6 +5,19 @@ import { Loader } from '../../../Component';
 function OrderInformation() {
   const { shippingInformations, mealIngredientsList } = useSelector((state) => state.AuthReducers);
 
+  const  capitalizeFirstLetter=(string)=> {
+    if (string !== undefined && string !== null && string.length > 0)
+      return string.charAt(0).toUpperCase() + string.slice(1);
+  }
+
+
+  const renderValue = (keyValue) => {
+    return Object.keys(keyValue).map((key) => {
+      let value = keyValue[key];
+      return <p  style={{fontWeight:'bolder'}}> {capitalizeFirstLetter(key)}  : <span style={{fontWeight:'normal'}}>{value}</span> </p>;
+    });
+  };
+
   return (
     <d>
 {mealIngredientsList ?
@@ -18,17 +31,7 @@ function OrderInformation() {
         <div className='row pb-3'>
      
         <div className="col-lg-6 col-md-6">
-
-          <p  style={{fontWeight:'bolder'}}> Name    : <span style={{fontWeight:'normal'}}>{shippingInformations?.fullName}</span> </p>
-          <p  style={{fontWeight:'bolder'}}> Address : <span style={{fontWeight:'normal'}}>{shippingInformations?.address}</span> </p>
-          <p  style={{fontWeight:'bolder'}}> City : <span style={{fontWeight:'normal'}}> {shippingInformations?.city}</span> </p>
-          <p  style={{fontWeight:'bolder'}}> Number : <span style={{fontWeight:'normal'}}>{shippingInformations?.phone}</span> </p>
-          <p  style={{fontWeight:'bolder'}}> Email : <span style={{fontWeight:'normal'}}> {shippingInformations?.email}</span> </p>
-          <p  style={{fontWeight:'bolder'}}> Quantity : <span style={{fontWeight:'normal'}}> {shippingInformations?.quantity}</span> </p>
-          <p  style={{fontWeight:'bolder'}}> Ordered Time : <span style={{fontWeight:'normal'}}> {shippingInformations?.time}</span> </p>
-    
-      
-       
+          {renderValue(shippingInformations)}
         </div>
           <div className='col-lg-6 col-md-6'>
             {mealIngredientsList?.map((meal, index) => (
