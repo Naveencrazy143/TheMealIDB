@@ -11,7 +11,7 @@ const initialState = {
 };
 
 const  AuthReducers = (state = initialState, action) => {
-console.log(action)
+
   switch (action.type) {
     case FETCH_FOOD_LIST:
     state={...state,foodMealsList:undefined}

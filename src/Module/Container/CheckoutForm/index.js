@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux'
 import {shippingInformation} from '../../../Redux'
 import { useNavigate } from "react-router-dom";
+import { Input } from '../../../Component';
 function CheckoutForm() {
   const navigation =useNavigate()
     const dispatch=useDispatch()
@@ -59,48 +60,18 @@ function CheckoutForm() {
       <form style={{color:'#014e25'}} onSubmit={
         handleSubmit
       } >
-        <div className="form-group" >
-          <label>Full Name</label>
-          <input type="text" className="form-control" name="fullName" value={shippingInfo.fullName} onChange={handleChange} required style={{backgroundColor:"#f2faf0"}} />
-        </div>
-        <div className="form-group">
-          <label>Address</label>
-          <input type="text" className="form-control" name="address" value={shippingInfo.address} onChange={handleChange} required style={{backgroundColor:"#f2faf0"}}  />
+        <Input name={'fullName'} labelName={'FullName'}  value={shippingInfo.fullName} onChange={handleChange}  />
+        <Input name={'address'} labelName={'Address'}  value={shippingInfo.address} onChange={handleChange}  />
+        <div className="form-row">
+        <Input name={'city'} labelName={'City'} className={'col-md-6 '} value={shippingInfo.city} onChange={handleChange}  />
+        <Input name={'state'} labelName={'State'}  className={'col-md-4 '} value={shippingInfo.state} onChange={handleChange}  />
+        <Input name={'zip'} labelName={'ZIP'}max={6}  type={'tel'} className={'col-md-2 '}value={shippingInfo.zip} onChange={handleChange}  />
         </div>
         <div className="form-row">
-          <div className="form-group col-md-6">
-            <label>City</label>
-            <input type="text" className="form-control" name="city" value={shippingInfo.city} onChange={handleChange} required style={{backgroundColor:"#f2faf0"}}  />
-          </div>
-          <div className="form-group col-md-4">
-            <label>State</label>
-            <input type="text" className="form-control" name="state" value={shippingInfo.state} onChange={handleChange} required  style={{backgroundColor:"#f2faf0"}} />
-          </div>
-          <div className="form-group col-md-2">
-            <label>ZIP</label>
-            <input type="tel"
-             maxLength={6} 
-             className="form-control" name="zip" value={shippingInfo.zip} onChange={handleChange} required style={{backgroundColor:"#f2faf0"}}  />
-          </div>
+        <Input name={'phone'} labelName={'Phone'}  max={10}  type={'tel'} className={'col-md-6 '} value={shippingInfo.phone} onChange={handleChange}  />
+        <Input name={'email'}type={"email" } labelName={'Email'} className={'col-md-6 '}value={shippingInfo.email} onChange={handleChange}  />
         </div>
-        <div className="form-row">
-          <div className="form-group col-md-6">
-          <label>Email</label>
-          <input type="email" className="form-control" name="email" value={shippingInfo.email} onChange={handleChange} required style={{backgroundColor:"#f2faf0"}}  />
-          </div>
-          <div className="form-group col-md-6">
-          <label>Phone</label>
-          <input type="tel" className="form-control" name="phone" value={shippingInfo.phone} 
-          maxLength={10} 
-          onChange={handleChange} required style={{backgroundColor:"#f2faf0"}} />
-          </div>
-          <div className="form-group col-md-6">
-          <label>Quantity</label>
-          <input type="tel" className="form-control" name="quantity" value={shippingInfo.quantity} 
-          maxLength={2} 
-          onChange={handleChange} required style={{backgroundColor:"#f2faf0"}} />
-          </div>
-        </div>
+        <Input name={'quantity'} labelName={'Quantity'}max={2}  type={'tel'}  value={shippingInfo.quantity} onChange={handleChange}  />
         <div className='text-center'>
         <button type="submit"  className="btn btn-primary px-lg-5">Purchase</button>
         </div>
